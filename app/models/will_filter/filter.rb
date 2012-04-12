@@ -195,7 +195,7 @@ module WillFilter
     end
   
     def default_order
-      'id'
+      self.model_class_name.singularize.constantize.primary_key || 'id'
     end
     
     def order
